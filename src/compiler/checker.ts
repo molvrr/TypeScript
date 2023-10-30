@@ -17868,7 +17868,7 @@ export function createTypeChecker(host: TypeCheckerHost): TypeChecker {
         // another (or, through recursion, possibly the same) conditional type. In the potentially tail-recursive
         // cases we increment the tail recursion counter and stop after 1000 iterations.
         while (true) {
-            if (tailCount === 100_000) {
+            if (tailCount === 10_000_000_000) {
                 error(currentNode, Diagnostics.Type_instantiation_is_excessively_deep_and_possibly_infinite);
                 return errorType;
             }
